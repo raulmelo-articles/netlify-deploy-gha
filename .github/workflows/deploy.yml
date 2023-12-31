@@ -3,7 +3,7 @@ name: Deploy website
 on: [push]
 
 env:
-  BRANCH_NAME: ${{ github.ref }}
+  BRANCH_NAME: ${{ github.ref_name }}
 
 jobs:
   build-and-deploy:
