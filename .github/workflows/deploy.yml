@@ -37,7 +37,7 @@ jobs:
             --site ${{ secrets.NETLIFY_SITE_ID }} \
             --auth ${{ secrets.NETLIFY_API_TOKEN }} \
             $prod_flag \
-            > deploy-output.txt
+            > deploy_output.txt
 
       - name: Generate URL Preview
         id: url_preview
