@@ -36,4 +36,15 @@ jobs:
             --dir dist \
             --site ${{ secrets.NETLIFY_SITE_ID }} \
             --auth ${{ secrets.NETLIFY_API_TOKEN }} \
-            $prod_flag
+            $prod_flag \
+            > deploy-output.txt
+
+      - name: Generate URL Preview
+        id: url_preview
+        if: ${{ env.BRANCH_NAME != 'main' }}
+        run: |
+          NETLIFY_PREVIEW_URL=$(cat deploy_output.txt | grep "Website draft URL: " | cut -d' ' -f4)
+          echo "NETLIFY_PREVIEW_URL=$NETLIFY_PREVIEW_URL" >> "$GITHUB_OUTPUT"
+
+      - name: DEBUG=WILL BE REMOVED
+        run: echo ${{ steps.url_preview.outputs.NETLIFY_PREVIEW_URL }}
