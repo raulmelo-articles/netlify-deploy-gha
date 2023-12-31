@@ -1,3 +1,5 @@
-# Demo Netlify + GitHub Actions deployment article
+# Deploying on Netlify via GitHub Actions: A Seamless Guide
 
-<!-- TODO: add post link here -->
+> Article: [https://www.raulmelo.me/en/blog/deploying-netlify-github-actions-guide](https://www.raulmelo.me/en/blog/deploying-netlify-github-actions-guide)
+
+Demo repository
